@@ -45,7 +45,6 @@ public class GistCRUDUtil {
         return given()
                 .header("Authorization", "token " + token)
                 .body(gist)
-                .log().all()
                 .when()
                 .post("/gists")
                 .then()

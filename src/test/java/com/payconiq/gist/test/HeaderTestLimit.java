@@ -41,7 +41,6 @@ public class HeaderTestLimit extends BaseAPITest {
     public void rateLimitRemainingShouldBeZero() {
         ExtractableResponse<Response> response1 = GistCRUDUtil.listAUsersGists(username);
         int rateLimitRemaining1 = Integer.parseInt(response1.header("X-RateLimit-Remaining"));
-        System.out.println(rateLimitRemaining1);
 
         for (int i = 0; i < rateLimitRemaining1; i++) {
             GistCRUDUtil.listAUsersGists(username);
